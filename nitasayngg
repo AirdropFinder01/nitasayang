@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Untuk Nita ❤️</title>
+  <meta name="description" content="Website romantis satu halaman untuk Nita." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink:#ffd1e6;
+      --hotpink:#ff4d88;
+      --red:#ff2d55;
+      --white:#fff;
+      --text:#a4164a;
+      --bg:#fff6fa;
+      --shadow:0 10px 30px rgba(255,77,136,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Quicksand",system-ui,Segoe UI,Arial,Helvetica,sans-serif;
+      background: radial-gradient(1200px 800px at 80% -20%, #ffe3ef 0%, transparent 60%),
+                  radial-gradient(900px 600px at -10% 110%, #ffe9f2 0%, transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    /* ====== Lock (Gembok) Intro Overlay ====== */
+    .gate{
+      position:fixed; inset:0;
+      display:grid; place-items:center;
+      background:
+        radial-gradient(1200px 800px at 50% -20%, #fff0f6 0%, transparent 60%),
+        linear-gradient(180deg, #fffafe 0%, #ffe6f0 100%);
+      z-index:9999;
+      transition:opacity .8s ease .2s, transform .8s ease .2s, visibility 0s linear .9s;
+    }
+    .gate__card{
+      background:var(--white);
+      border-radius:28px;
+      padding:28px 26px;
+      box-shadow:var(--shadow);
+      width:min(92vw,520px);
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .gate__sparkle{
+      position:absolute; inset:-40px;
+      background:
+        radial-gradient(12px 12px at 15% 20%, rgba(255,77,136,.18) 0 60%, transparent 61%) repeat,
+        radial-gradient(10px 10px at 70% 80%, rgba(255,77,136,.15) 0 60%, transparent 61%) repeat,
+        radial-gradient(8px 8px at 85% 35%, rgba(255,77,136,.12) 0 60%, transparent 61%) repeat;
+      filter: blur(1px);
+      pointer-events:none;
+      animation: twinkle 4s linear infinite;
+      opacity:.7;
+    }
+    @keyframes twinkle{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
+    }
+    .lock{
+      width:120px; height:120px; margin:4px auto 14px;
+      display:grid; place-items:center; cursor:pointer; user-select:none;
+      border-radius:22px;
+      background:linear-gradient(145deg,#fff,#ffe9f1);
+      border:2px dashed #ffc1d6;
+      transition:transform .2s ease;
+    }
+    .lock:active{ transform:scale(.97) }
+    .lock__icon{
+      font-size:58px; line-height:1;
+      filter: drop-shadow(0 10px 18px rgba(255,77,136,.25));
+      transition: transform .8s cubic-bezier(.2,.8,.2,1);
+    }
+    .gate h1{
+      margin:6px 0 4px;
+      font-family:"Great Vibes",cursive;
+      font-size:46px; color:var(--hotpink);
+      text-shadow:0 6px 18px rgba(255,77,136,.25);
+      letter-spacing:.4px;
+    }
+    .gate p{margin:8px 0 18px; color:#b2305c}
+    .gate__hint{
+      font-size:.9rem; opacity:.85;
+    }
+    .gate__btn{
+      display:inline-block;
+      margin-top:6px;
+      padding:10px 16px;
+      border-radius:999px;
+      border:none;
+      background:linear-gradient(180deg,var(--hotpink),var(--red));
+      color:#fff; font-weight:700;
+      box-shadow:0 8px 20px rgba(255,45,85,.35);
+      cursor:pointer;
+    }
+    /* Unlocked transition */
+    .gate.unlocked{
+      opacity:0; transform:scale(1.02);
+      visibility:hidden;
+    }
+    .gate.unlocked .lock__icon{
+      transform:rotate(-28deg) translateY(-6px) scale(1.12);
+    }
+
+    /* ====== Main ====== */
+    .wrap{
+      min-height:100dvh;
+      display:grid;
+      grid-template-rows:auto 1fr auto;
+    }
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(8px);
+      background:rgba(255,246,250,.7);
+      border-bottom:1px solid rgba(255,77,136,.15);
+    }
+    .container{
+      width:min(1000px,92vw);
+      margin:0 auto; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:700;
+      color:var(--hotpink);
+    }
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--hotpink);box-shadow:0 0 0 6px rgba(255,77,136,.15)}
+    main{
+      display:grid; place-items:center; padding:22px 0 36px;
+    }
+    .card{
+      background:var(--white);
+      border-radius:28px;
+      padding:24px;
+      width:min(960px,92vw);
+      box-shadow:var(--shadow);
+      display:grid;
+      gap:20px;
+    }
+    .hero{
+      display:grid; place-items:center; text-align:center; gap:14px;
+      padding:8px 8px 6px;
+      background:
+        radial-gradient(600px 220px at 50% -20%, #ffe9f2 0%, transparent 60%),
+        linear-gradient(180deg, #fff 0%, #fff 100%);
+      border-radius:24px;
+      position:relative; overflow:hidden;
+    }
+    .pulse{
+      font-size:60px; line-height:1; display:inline-grid; place-items:center;
+      width:110px; height:110px; border-radius:50%;
+      background:linear-gradient(180deg, #fff, #ffe6f0);
+      border:2px solid #ffd1e6;
+      box-shadow: 0 15px 40px rgba(255,45,85,.25), inset 0 0 25px rgba(255,77,136,.12);
+      animation: thump 1.25s ease-in-out infinite;
+    }
+    @keyframes thump{
+      0%,100%{ transform:scale(1); }
+      14%{ transform:scale(1.08); }
+      28%{ transform:scale(0.98); }
+      42%{ transform:scale(1.05); }
+      70%{ transform:scale(1); }
+    }
+    h2.title{
+      margin:2px 0 0;
+      font-weight:800;
+      font-size:clamp(1.15rem, 1.1rem + 1.2vw, 2rem);
+      color:var(--hotpink);
+    }
+    .subtitle{
+      margin:0;
+      font-size:clamp(.98rem, .9rem + .6vw, 1.15rem);
+      color:#b2305c;
+    }
+    .note{
+      margin:2px auto 2px;
+      max-width:60ch;
+      color:#8f264a; line-height:1.7;
+    }
+    .grid{
+      display:grid; gap:16px; grid-template-columns:repeat(3,1fr);
+    }
+    .bubble{
+      padding:16px;
+      border-radius:18px;
+      background:linear-gradient(180deg,#fff,#fff8fb);
+      border:1px solid #ffd1e6;
+      box-shadow:0 8px 20px rgba(255,77,136,.12);
+      min-height:110px;
+    }
+    .bubble strong{color:var(--red)}
+    footer{
+      text-align:center; padding:18px 0 30px; color:#b2305c; font-size:.95rem;
+    }
+
+    /* Floating background hearts */
+    .floater{
+      position:fixed; left:50%; bottom:-10vh; translate:-50% 0;
+      pointer-events:none; z-index:0;
+    }
+
+    /* Responsiveness */
+    @media (max-width:840px){
+      .grid{grid-template-columns:1fr}
+      .pulse{width:96px;height:96px;font-size:50px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Intro Lock (Gembok) -->
+  <div class="gate" id="gate">
+    <div class="gate__card">
+      <div class="gate__sparkle" aria-hidden="true"></div>
+      <div class="lock" id="lock">
+        <div class="lock__icon" id="lockIcon">🔒</div>
+      </div>
+      <h1>Ketuk Gemboknya</h1>
+      <p class="gate__hint">Buka pintu hatiku… klik gembok untuk masuk 💘</p>
+      <button class="gate__btn" id="unlockBtn" aria-label="Buka">Buka</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <div class="container">
+        <div class="brand">
+          <span class="dot" aria-hidden="true"></span>
+          <span><b>Untuk Nita</b> — halaman kecil penuh cinta</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" aria-live="polite">
+        <div class="hero">
+          <div class="pulse" aria-hidden="true">❤️</div>
+          <h2 class="title">
+            Hai Sayangkuu Nita 💖, princes baik hati yang suka menabung dan tidak pernah marah.
+          </h2>
+          <p class="subtitle">Semoga halaman kecil ini bikin kamu tersenyum, setiap kali kamu melihatnya. ✨</p>
+          <p class="note">
+            Aku bersyukur dipertemukan denganmu. Setiap detik bersamamu terasa lebih ringan, lebih hangat, dan lebih berarti.
+            Semoga langkah kita selalu satu arah: menuju kebahagiaan, keberkahan, dan rumah yang kita sebut <em>kita</em>. 💞
+          </p>
+        </div>
+
+        <div class="grid">
+          <div class="bubble">
+            <strong>Janji Kecil:</strong> Menjagamu dengan sabar, memahami tanpa memaksa,
+            dan mencintaimu tanpa henti—hari ini, besok, dan seterusnya.
+          </div>
+          <div class="bubble">
+            <strong>Harapan Bersama:</strong> Kita tumbuh bareng, nabung impian bareng,
+            dan tertawa bareng sampai hal sepele pun terasa istimewa.
+          </div>
+          <div class="bubble">
+            <strong>Doa Setiap Malam:</strong> Semoga hatimu selalu tenang, senyummu mudah hadir,
+            dan aku selalu jadi alas yang nyaman untuk lelahmu.
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="bubble">
+            <strong>Untuk Nita:</strong> Kamu itu rumah, yang selalu ingin aku pulang.
+          </div>
+          <div class="bubble">
+            <strong>Untuk Kita:</strong> Jika badai datang, kita peluk erat—karena genggaman kita lebih kuat.
+          </div>
+          <div class="bubble">
+            <strong>Untuk Esok:</strong> Mari menua dengan tawa, cerita, dan foto-foto sederhana yang penuh makna.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Dibuat dengan sepenuh hati oleh seseorang yang sangat menyayangimu. © <span id="year"></span>
+    </footer>
+  </div>
+
+  <!-- Floating Hearts (background) -->
+  <canvas class="floater" id="heartsCanvas" width="800" height="400" aria-hidden="true"></canvas>
+
+  <script>
+    // ====== Helper: create small heart confetti ======
+    function popHearts(x=window.innerWidth/2, y=window.innerHeight/2, count=18){
+      for(let i=0;i<count;i++){
+        const s = document.createElement('div');
+        s.textContent = '❤';
+        s.style.position='fixed';
+        s.style.left = x+'px';
+        s.style.top = y+'px';
+        s.style.transform='translate(-50%,-50%)';
+        s.style.fontSize=(10+Math.random()*22)+'px';
+        s.style.pointerEvents='none';
+        s.style.zIndex=9999;
+        s.style.filter='drop-shadow(0 6px 10px rgba(255,45,85,.35))';
+        document.body.appendChild(s);
+
+        const dx = (Math.random()*2-1)*120;
+        const dy = - (40+Math.random()*140);
+        const rot = (Math.random()*2-1)*180;
+
+        s.animate([
+          { transform: `translate(-50%,-50%) translate(0px,0px) rotate(0deg)`, opacity:1 },
+          { transform: `translate(-50%,-50%) translate(${dx}px,${dy}px) rotate(${rot}deg)`, opacity:0 }
+        ], { duration: 900+Math.random()*600, easing:'cubic-bezier(.2,.8,.2,1)', fill:'forwards' });
+
+        setTimeout(()=> s.remove(), 1700);
+      }
+    }
+
+    // ====== Gate (Gembok) logic ======
+    const gate = document.getElementById('gate');
+    const lock = document.getElementById('lock');
+    const lockIcon = document.getElementById('lockIcon');
+    const unlockBtn = document.getElementById('unlockBtn');
+
+    function unlockSequence(clientX, clientY){
+      // Small click animation on the lock
+      lockIcon.animate(
+        [{ transform:'scale(1) rotate(0deg)' }, { transform:'scale(1.18) rotate(-20deg)' }, { transform:'scale(1) rotate(-28deg)' }],
+        { duration: 520, easing:'cubic-bezier(.2,.8,.2,1)' }
+      );
+      // Heart confetti
+      popHearts(clientX, clientY, 22);
+      // Fade the gate away
+      gate.classList.add('unlocked');
+    }
+    lock.addEventListener('click', (e)=> unlockSequence(e.clientX, e.clientY));
+    unlockBtn.addEventListener('click', (e)=> unlockSequence(window.innerWidth/2, window.innerHeight/2));
+
+    // ====== Floating hearts canvas background ======
+    (function(){
+      const c = document.getElementById('heartsCanvas');
+      const ctx = c.getContext('2d');
+      let W = c.width = Math.min(1000, window.innerWidth*0.9);
+      let H = c.height = 420;
+
+      const hearts = [];
+      const max = 26;
+
+      function makeHeart(){
+        return {
+          x: Math.random()*W,
+          y: H + Math.random()*80,
+          size: 8 + Math.random()*12,
+          speed: 0.7 + Math.random()*1.2,
+          drift: (Math.random()*2-1) * 0.4,
+          alpha: 0.35 + Math.random()*0.4
+        };
+      }
+      for(let i=0;i<max;i++) hearts.push(makeHeart());
+
+      function drawHeart(x,y,s,alpha){
+        ctx.save();
+        ctx.translate(x,y);
+        ctx.scale(s/12, s/12);
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = '#ff4d88';
+        ctx.beginPath();
+        // Simple heart path
+        ctx.moveTo(0, -5);
+        ctx.bezierCurveTo(-6,-12, -14,-2, 0, 8);
+        ctx.bezierCurveTo(14,-2, 6,-12, 0, -5);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      function tick(){
+        ctx.clearRect(0,0,W,H);
+        hearts.forEach(h=>{
+          h.y -= h.speed;
+          h.x += h.drift;
+          if(h.y < -10) Object.assign(h, makeHeart(), { y: H+10 });
+          drawHeart(h.x, h.y, h.size, h.alpha);
+        });
+        requestAnimationFrame(tick);
+      }
+      tick();
+
+      window.addEventListener('resize', ()=>{
+        W = c.width = Math.min(1000, window.innerWidth*0.9);
+      });
+    })();
+
+    // ====== Footer year ======
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Extra: Pop hearts when main heart is clicked
+    document.addEventListener('click', function(ev){
+      const target = ev.target;
+      if(target.closest('.pulse')){
+        popHearts(ev.clientX, ev.clientY, 18);
+      }
+    }, false);
+  </script>
+</body>
+</html>
